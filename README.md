@@ -4,7 +4,6 @@
 
 A multifunctional application for exploring available localizations of S.T.A.L.K.E.R. 2: Heart of Chornobyl and comparing texts with their previous versions.
 
-<br>
 <div align="center">
 
 [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -19,7 +18,8 @@ S.T.A.L.K.E.R. 2, game content and materials are trademarks and copyrights of GS
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 [![S.T.A.L.K.E.R. 2](https://img.shields.io/badge/s.t.a.l.k.e.r.%202-ae891a?style=for-the-badge)](https://www.stalker2.com/)
 [![GSC Game World](https://img.shields.io/badge/gsc-game%20world-blue?style=for-the-badge&labelColor=gold)](https://www.gsc-game.com/)
+<br>
 
-[![Помочь пострадавшим от вторжения ВСУ в Курской области](https://redcross.ru/upload/resize_cache/webp/iblock/eaf/g6fc7ud3gripav1izi6an3qaxdxfe958/1200_450-5.webp)](https://sborbelgorod.redcross.ru/)
+[![Помочь пострадавшим от вторжения ВСУ в Курской области](https://img.shields.io/badge/help%20kursk%20citizens%20suffering%20from%20ukrainian%20invasion-red?style=for-the-badge)](https://sborbelgorod.redcross.ru/)
 
 </div>
