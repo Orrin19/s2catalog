@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# [s2catalog.web.app](https://s2catalog.web.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="public/s2rad.png" align="left" width="64px"/>
 
-Currently, two official plugins are available:
+A multifunctional application for exploring available localizations of S.T.A.L.K.E.R. 2: Heart of Chornobyl and comparing texts with their previous versions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
+<div align="center">
 
-## Expanding the ESLint configuration
+[![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)](https://sass-lang.com/)
+[![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34)](https://firebase.google.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project is not affiliated with GSC Game World.
+S.T.A.L.K.E.R. 2, game content and materials are trademarks and copyrights of GSC.
 
-- Configure the top-level `parserOptions` property like this:
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+[![S.T.A.L.K.E.R. 2](https://img.shields.io/badge/s.t.a.l.k.e.r.%202-ae891a?style=for-the-badge)](https://www.stalker2.com/)
+[![GSC Game World](https://img.shields.io/badge/gsc-game%20world-blue?style=for-the-badge&labelColor=gold)](https://www.gsc-game.com/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+[![Помочь пострадавшим от вторжения ВСУ в Курской области](https://redcross.ru/upload/resize_cache/webp/iblock/eaf/g6fc7ud3gripav1izi6an3qaxdxfe958/1200_450-5.webp)](https://sborbelgorod.redcross.ru/)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+</div>
