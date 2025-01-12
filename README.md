@@ -3,6 +3,7 @@
 <img src="public/s2rad.png" align="left" width="64px"/>
 
 A multifunctional application for exploring available localizations of S.T.A.L.K.E.R. 2: Heart of Chornobyl and comparing texts with their previous versions.
+<br clear="all">
 
 <div align="center">
 
