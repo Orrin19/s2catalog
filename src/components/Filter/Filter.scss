@@ -66,6 +66,7 @@
 
   &__input {
     border: none;
+    border-bottom: 2px solid transparent;
     background: none;
     color: #fff;
     font-size: 1.2rem;
@@ -74,6 +75,7 @@
     width: 100%;
 
     &:focus {
+      border-color: #fff;
       outline: none;
     }
   }

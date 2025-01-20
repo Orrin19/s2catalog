@@ -1,5 +1,5 @@
 import "./Filter.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   VscRegex,
   VscCaseSensitive,
@@ -12,9 +12,11 @@ const Filter = () => {
   const [useCase, setUseCase] = useState(false);
   const [useWholeWord, setUseWholeWord] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClearInput = () => {
     setInputValue("");
+    inputRef.current?.focus();
   };
 
   return (
@@ -44,6 +46,8 @@ const Filter = () => {
       </button>
       <div className="filter__input-container">
         <input
+          ref={inputRef}
+          autoFocus
           type="text"
           className="filter__input"
           placeholder="Начните вводить текст"
