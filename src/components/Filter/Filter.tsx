@@ -1,11 +1,21 @@
 import "./Filter.scss";
 import { useState } from "react";
-import { VscRegex, VscCaseSensitive, VscWholeWord } from "react-icons/vsc";
+import {
+  VscRegex,
+  VscCaseSensitive,
+  VscWholeWord,
+  VscClose,
+} from "react-icons/vsc";
 
 const Filter = () => {
   const [useRegex, setUseRegex] = useState(false);
   const [useCase, setUseCase] = useState(false);
   const [useWholeWord, setUseWholeWord] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleClearInput = () => {
+    setInputValue("");
+  };
 
   return (
     <div className="filter">
@@ -32,11 +42,22 @@ const Filter = () => {
       >
         <VscWholeWord />
       </button>
-      <input
-        type="text"
-        className="filter__input"
-        placeholder="Начните ввводить текст"
-      />
+      <div className="filter__input-container">
+        <input
+          type="text"
+          className="filter__input"
+          placeholder="Начните вводить текст"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button
+          title="Очистить поле"
+          onClick={handleClearInput}
+          className="filter__button filter__button--clear"
+        >
+          <VscClose />
+        </button>
+      </div>
     </div>
   );
 };
