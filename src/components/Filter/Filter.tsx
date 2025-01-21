@@ -1,18 +1,34 @@
 import "./Filter.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   VscRegex,
   VscCaseSensitive,
   VscWholeWord,
   VscClose,
 } from "react-icons/vsc";
+import CatalogService from "../../services/CatalogService";
 
-const Filter = () => {
+interface FilterProps {
+  catalogService: CatalogService;
+}
+
+const Filter = ({ catalogService }: FilterProps) => {
   const [useRegex, setUseRegex] = useState(false);
   const [useCase, setUseCase] = useState(false);
   const [useWholeWord, setUseWholeWord] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    catalogService.setRegex(useRegex);
+    catalogService.setCase(useCase);
+    catalogService.setWholeWord(useWholeWord);
+  }, [useRegex, useCase, useWholeWord, catalogService]);
+
+  useEffect(() => {
+    catalogService.setCurrentFilter(inputValue);
+    console.log(catalogService.getCatalog());
+  }, [inputValue, catalogService, useRegex, useCase, useWholeWord]);
 
   const handleClearInput = () => {
     setInputValue("");
