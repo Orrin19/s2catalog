@@ -10,9 +10,10 @@ import CatalogService from "../../services/CatalogService";
 
 interface FilterProps {
   catalogService: CatalogService;
+  onCatalogUpdate: () => void;
 }
 
-const Filter = ({ catalogService }: FilterProps) => {
+const Filter = ({ catalogService, onCatalogUpdate }: FilterProps) => {
   const [useRegex, setUseRegex] = useState(false);
   const [useCase, setUseCase] = useState(false);
   const [useWholeWord, setUseWholeWord] = useState(false);
@@ -27,8 +28,9 @@ const Filter = ({ catalogService }: FilterProps) => {
 
   useEffect(() => {
     catalogService.setCurrentFilter(inputValue);
-    console.log(catalogService.getCatalog());
-  }, [inputValue, catalogService, useRegex, useCase, useWholeWord]);
+    onCatalogUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputValue, useRegex, useCase, useWholeWord]);
 
   const handleClearInput = () => {
     setInputValue("");
@@ -67,6 +69,7 @@ const Filter = ({ catalogService }: FilterProps) => {
           type="text"
           className="filter__input"
           placeholder="Начните вводить текст"
+          spellCheck={false}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />

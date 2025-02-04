@@ -1,6 +1,6 @@
 .filter {
   align-items: stretch;
-  background-color: #333;
+  background-color: var(--grey-dark-color);
   border-radius: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +19,7 @@
     width: 3rem;
 
     &::after {
-      background-color: #fff;
+      background-color: var(--white-color);
       border-radius: 4px;
       content: "";
       display: block;
@@ -30,7 +30,7 @@
     }
 
     &--active {
-      color: #fff;
+      color: var(--white-color);
       &::after {
         width: 80%;
       }
@@ -68,14 +68,14 @@
     border: none;
     border-bottom: 2px solid transparent;
     background: none;
-    color: #fff;
+    color: var(--white-color);
     font-size: 1.2rem;
     padding: 0.25rem 0.5rem;
     transition: 0.3s ease;
     width: 100%;
 
     &:focus {
-      border-color: #fff;
+      border-color: var(--white-color);
       outline: none;
     }
   }

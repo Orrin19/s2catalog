@@ -1,9 +1,9 @@
 import ru from "../assets/current/ru.json";
 
 export default class CatalogService {
-  private catalog: object = ru;
+  private catalog: { [key: string]: string } = ru as { [key: string]: string };
   private currentFilter: string = "";
-  private filteredCatalog: object = this.catalog;
+  private filteredCatalog: { [key: string]: string } = this.catalog;
   private isRegex: boolean = false;
   private isCase: boolean = false;
   private isWholeWord: boolean = false;
