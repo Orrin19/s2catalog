@@ -17,11 +17,13 @@ const StringContainer = ({ id, string }: StringContainerProps) => {
         case "br":
           return "<br>";
         case "notebold":
+          return "<b>";
         case "/notebold":
-          return "'''";
+          return "</b>";
         case "noteitalic":
+          return "<i>";
         case "/noteitalic":
-          return "''";
+          return "</i>";
         case "noteunderline":
           return "<u>";
         case "/noteunderline":
