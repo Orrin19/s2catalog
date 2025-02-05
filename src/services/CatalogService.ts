@@ -27,41 +27,45 @@ export default class CatalogService {
   public setCurrentFilter(filter: string) {
     this.currentFilter = filter;
 
-    const wordBoundary = this.isWholeWord ? "[^А-Яа-я\\w]" : "";
-    const reg = new RegExp(
-      `${wordBoundary}${this.currentFilter}${wordBoundary}`,
-      this.isCase ? "" : "i"
-    );
+    try {
+      const wordBoundary = this.isWholeWord ? "[^А-Яа-я\\w]" : "";
+      const reg = new RegExp(
+        `${wordBoundary}${this.currentFilter}${wordBoundary}`,
+        this.isCase ? "" : "i"
+      );
 
-    this.filteredCatalog = Object.fromEntries(
-      Object.entries(this.catalog).filter(([key, value]) => {
-        const isKeyMatch = this.isRegex
-          ? reg.test(key)
-          : this.isCase
-          ? this.isWholeWord
-            ? key.split(/[\s.,;:\\-]+/).includes(this.currentFilter)
-            : key.includes(this.currentFilter)
-          : this.isWholeWord
-          ? key
-              .toLowerCase()
-              .split(/[\s.,;:\\-]+/)
-              .includes(this.currentFilter.toLowerCase())
-          : key.toLowerCase().includes(this.currentFilter.toLowerCase());
-        const isValueMatch = this.isRegex
-          ? reg.test(value)
-          : this.isCase
-          ? this.isWholeWord
-            ? value.split(/[\s.,;:\\-]+/).includes(this.currentFilter)
-            : value.includes(this.currentFilter)
-          : this.isWholeWord
-          ? value
-              .toLowerCase()
-              .split(/[\s.,;:\\-]+/)
-              .includes(this.currentFilter.toLowerCase())
-          : value.toLowerCase().includes(this.currentFilter.toLowerCase());
+      this.filteredCatalog = Object.fromEntries(
+        Object.entries(this.catalog).filter(([key, value]) => {
+          const isKeyMatch = this.isRegex
+            ? reg.test(key)
+            : this.isCase
+            ? this.isWholeWord
+              ? key.split(/[\s.,;:\\-]+/).includes(this.currentFilter)
+              : key.includes(this.currentFilter)
+            : this.isWholeWord
+            ? key
+                .toLowerCase()
+                .split(/[\s.,;:\\-]+/)
+                .includes(this.currentFilter.toLowerCase())
+            : key.toLowerCase().includes(this.currentFilter.toLowerCase());
+          const isValueMatch = this.isRegex
+            ? reg.test(value)
+            : this.isCase
+            ? this.isWholeWord
+              ? value.split(/[\s.,;:\\-]+/).includes(this.currentFilter)
+              : value.includes(this.currentFilter)
+            : this.isWholeWord
+            ? value
+                .toLowerCase()
+                .split(/[\s.,;:\\-]+/)
+                .includes(this.currentFilter.toLowerCase())
+            : value.toLowerCase().includes(this.currentFilter.toLowerCase());
 
-        return isKeyMatch || isValueMatch;
-      })
-    );
+          return isKeyMatch || isValueMatch;
+        })
+      );
+    } catch {
+      this.filteredCatalog = this.catalog;
+    }
   }
 }

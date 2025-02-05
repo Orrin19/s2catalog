@@ -29,13 +29,11 @@ const StringsBlock = ({ catalog }: StringsBlockProps) => {
     const adaptivePages = pagesArray.slice(start - 1, end);
     if (!adaptivePages.includes(1)) adaptivePages.unshift(1);
     if (!adaptivePages.includes(pages)) adaptivePages.push(pages);
-    console.log(adaptivePages);
     if (
       adaptivePages[1] - adaptivePages[0] > 1 &&
       adaptivePages[1] !== 2 &&
       adaptivePages[1] !== -1
     ) {
-      console.log(1);
       adaptivePages.splice(1, 0, -1);
     }
     if (
