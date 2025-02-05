@@ -1,6 +1,6 @@
 .strings-block {
   align-items: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Consolas", serif;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -42,6 +42,7 @@
   &__id {
     background-color: var(--accent-color);
     border-radius: 1rem;
+    font-family: "Inconsolata", serif;
     font-size: 0.8em;
     padding: 0.2rem 0.7rem;
     position: relative;
